@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> SMS Retriever </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">SMS Retriever</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div>
+      <ion-input
+        type="tel"
+        pattern="[0-9]*"
+        min="0"
+        max=""
+        id="two-factor-auth"
+        autocomplete="one-time-code"
+        [(ngModel)]="oneTimeCode"
+      ></ion-input>
+    </div>
+    <div>
+      Resend OTP in {{counter}}s
+      <ion-button
+        class="text-primary"
+        (click)="resend()"
+        aria-label="Resend"
+        [disabled]="!enableResendBtn"
+        >Resend</ion-button
+      >
+    </div>
+  </div>
+</ion-content>
