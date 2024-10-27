@@ -36,7 +36,7 @@ public class AndroidSmsRetrieved {
 
     public void registerSmsReceiver() {
         IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
-        activity.registerReceiver(smsBroadcastReceiver, intentFilter);
+        ContextCompat.registerReceiver(activity, smsBroadcastReceiver, intentFilter, ContextCompat.RECEIVER_EXPORTED);
     }
 
     public void unregisterSmsReceiver() {
